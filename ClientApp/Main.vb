@@ -7,41 +7,6 @@ Public Class Main
         ControlHelper.ApplyRoundedCorners(chatPanel, 25)
         ControlHelper.ApplyRoundedCorners(filesharePanel, 25)
         DataGridView1.ClearSelection()
-        ' Retrieve data from the database
-        Dim dataTable As DataTable = GetDataFromDatabase()
-        ' Configure the DataGridView
-        DataGridView1.ClearSelection()
-        ConfigureDataGridView()
-        ' Bind the data to the DataGridView
-        DataGridView1.DataSource = dataTable
-        DataGridView1.ClearSelection()
-    End Sub
-
-    Private Function GetDataFromDatabase() As DataTable
-        Dim dataTable As New DataTable()
-
-        Using con As New MySqlConnection("server=localhost;username=root;password=091534;database=db_CSMS")
-            Dim query As String = "SELECT CONCAT(firstname, ' ', lastname) AS Employees FROM tbl_employee"
-            Using adapter As New MySqlDataAdapter(query, con)
-                adapter.Fill(dataTable)
-            End Using
-        End Using
-
-        Return dataTable
-    End Function
-
-    Private Sub ConfigureDataGridView()
-        ' Hide the row header column
-
-        DataGridView1.RowHeadersVisible = False
-        ' Configure the DataGridView
-        DataGridView1.ColumnHeadersVisible = False
-
-
-        ' Disable column sorting
-        For Each column As DataGridViewColumn In DataGridView1.Columns
-            column.SortMode = DataGridViewColumnSortMode.NotSortable
-        Next
     End Sub
 
 
@@ -91,5 +56,12 @@ Public Class Main
 
     Private Sub storage_CheckedChanged(sender As Object, e As EventArgs) Handles storage.CheckedChanged
         DataGridView1.ClearSelection()
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs)
+
+    End Sub
+    Public Sub SetDisplayName(firstName As String)
+        displayName.Text = firstName
     End Sub
 End Class

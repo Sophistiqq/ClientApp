@@ -27,11 +27,19 @@ Partial Class Main
         Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.displayName = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.chatBtn = New System.Windows.Forms.Label()
-        Me.settingsBtn = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.fileshareBtn = New System.Windows.Forms.Label()
+        Me.settingsBtn = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.filesharePanel = New System.Windows.Forms.TableLayoutPanel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.fileTextBox = New System.Windows.Forms.TextBox()
@@ -47,6 +55,12 @@ Partial Class Main
         Me.chatPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.filesharePanel.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -56,87 +70,179 @@ Partial Class Main
         '
         Me.Panel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.chatBtn)
+        Me.Panel1.Controls.Add(Me.displayName)
+        Me.Panel1.Controls.Add(Me.PictureBox4)
+        Me.Panel1.Controls.Add(Me.TextBox2)
+        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.PictureBox3)
+        Me.Panel1.Controls.Add(Me.Panel4)
+        Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.settingsBtn)
-        Me.Panel1.Controls.Add(Me.fileshareBtn)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(87, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(227, Byte), Integer))
+        Me.Panel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.Panel1.Location = New System.Drawing.Point(26, 53)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 377)
+        Me.Panel1.Size = New System.Drawing.Size(244, 377)
         Me.Panel1.TabIndex = 0
+        '
+        'displayName
+        '
+        Me.displayName.AutoSize = True
+        Me.displayName.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.displayName.Location = New System.Drawing.Point(102, 54)
+        Me.displayName.Name = "displayName"
+        Me.displayName.Size = New System.Drawing.Size(57, 22)
+        Me.displayName.TabIndex = 14
+        Me.displayName.Text = "Name"
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.ClientApp.My.Resources.Resources.avatar
+        Me.PictureBox4.Location = New System.Drawing.Point(39, 40)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 13
+        Me.PictureBox4.TabStop = False
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Location = New System.Drawing.Point(131, 137)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(100, 5)
+        Me.TextBox2.TabIndex = 12
+        Me.TextBox2.TabStop = False
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Location = New System.Drawing.Point(16, 41)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(5, 300)
+        Me.TextBox1.TabIndex = 11
+        Me.TextBox1.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.ClientApp.My.Resources.Resources.settings
+        Me.PictureBox3.Location = New System.Drawing.Point(48, 320)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox3.TabIndex = 7
+        Me.PictureBox3.TabStop = False
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.PictureBox2)
+        Me.Panel4.Controls.Add(Me.chatBtn)
+        Me.Panel4.Location = New System.Drawing.Point(42, 249)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Padding = New System.Windows.Forms.Padding(3)
+        Me.Panel4.Size = New System.Drawing.Size(200, 44)
+        Me.Panel4.TabIndex = 6
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PictureBox2.Image = Global.ClientApp.My.Resources.Resources.chat_fixed
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(44, 38)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabStop = False
         '
         'chatBtn
         '
-        Me.chatBtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.chatBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.chatBtn.Dock = System.Windows.Forms.DockStyle.Right
         Me.chatBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chatBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.chatBtn.Location = New System.Drawing.Point(-1, 197)
+        Me.chatBtn.Location = New System.Drawing.Point(48, 3)
         Me.chatBtn.Name = "chatBtn"
-        Me.chatBtn.Size = New System.Drawing.Size(200, 44)
+        Me.chatBtn.Size = New System.Drawing.Size(149, 38)
         Me.chatBtn.TabIndex = 4
         Me.chatBtn.Text = "Chat"
         Me.chatBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'settingsBtn
+        'Panel3
         '
-        Me.settingsBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.settingsBtn.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.settingsBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.settingsBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.settingsBtn.Location = New System.Drawing.Point(0, 339)
-        Me.settingsBtn.Name = "settingsBtn"
-        Me.settingsBtn.Size = New System.Drawing.Size(198, 36)
-        Me.settingsBtn.TabIndex = 3
-        Me.settingsBtn.Text = "Settings"
-        Me.settingsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(98, Byte), Integer), CType(CType(210, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.PictureBox1)
+        Me.Panel3.Controls.Add(Me.fileshareBtn)
+        Me.Panel3.Location = New System.Drawing.Point(39, 175)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Padding = New System.Windows.Forms.Padding(3)
+        Me.Panel3.Size = New System.Drawing.Size(200, 44)
+        Me.Panel3.TabIndex = 5
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PictureBox1.Image = Global.ClientApp.My.Resources.Resources.file_share
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(44, 38)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
         '
         'fileshareBtn
         '
-        Me.fileshareBtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.fileshareBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(87, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(227, Byte), Integer))
+        Me.fileshareBtn.BackColor = System.Drawing.Color.Transparent
         Me.fileshareBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.fileshareBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.fileshareBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer))
-        Me.fileshareBtn.Location = New System.Drawing.Point(-1, 135)
+        Me.fileshareBtn.Dock = System.Windows.Forms.DockStyle.Right
+        Me.fileshareBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fileshareBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
+        Me.fileshareBtn.Location = New System.Drawing.Point(47, 3)
         Me.fileshareBtn.Name = "fileshareBtn"
-        Me.fileshareBtn.Size = New System.Drawing.Size(200, 44)
+        Me.fileshareBtn.Size = New System.Drawing.Size(150, 38)
         Me.fileshareBtn.TabIndex = 2
         Me.fileshareBtn.Text = "File Share"
         Me.fileshareBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'settingsBtn
+        '
+        Me.settingsBtn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.settingsBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.settingsBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.settingsBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
+        Me.settingsBtn.Location = New System.Drawing.Point(90, 320)
+        Me.settingsBtn.Name = "settingsBtn"
+        Me.settingsBtn.Size = New System.Drawing.Size(155, 43)
+        Me.settingsBtn.TabIndex = 3
+        Me.settingsBtn.Text = "Settings"
+        Me.settingsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(27, 28)
+        Me.Label2.Location = New System.Drawing.Point(35, 122)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 31)
+        Me.Label2.Size = New System.Drawing.Size(81, 31)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Main"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(87, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(227, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(93, 28)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 31)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Menu"
+        Me.Label2.Text = "Menu"
         '
         'filesharePanel
         '
-        Me.filesharePanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer))
+        Me.filesharePanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.filesharePanel.ColumnCount = 2
         Me.filesharePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.filesharePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 187.0!))
+        Me.filesharePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205.0!))
         Me.filesharePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.filesharePanel.Controls.Add(Me.DataGridView1, 1, 2)
         Me.filesharePanel.Controls.Add(Me.fileTextBox, 1, 0)
@@ -145,12 +251,12 @@ Partial Class Main
         Me.filesharePanel.Controls.Add(Me.Label5, 0, 1)
         Me.filesharePanel.Controls.Add(Me.Panel2, 0, 2)
         Me.filesharePanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize
-        Me.filesharePanel.Location = New System.Drawing.Point(232, 53)
+        Me.filesharePanel.Location = New System.Drawing.Point(318, 25)
         Me.filesharePanel.Name = "filesharePanel"
         Me.filesharePanel.Padding = New System.Windows.Forms.Padding(5)
         Me.filesharePanel.RowCount = 3
-        Me.filesharePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.67538!))
-        Me.filesharePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.150327!))
+        Me.filesharePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.278867!))
+        Me.filesharePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.32898!))
         Me.filesharePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.17429!))
         Me.filesharePanel.Size = New System.Drawing.Size(397, 469)
         Me.filesharePanel.TabIndex = 1
@@ -182,7 +288,7 @@ Partial Class Main
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Enabled = False
         Me.DataGridView1.GridColor = System.Drawing.Color.Black
-        Me.DataGridView1.Location = New System.Drawing.Point(208, 98)
+        Me.DataGridView1.Location = New System.Drawing.Point(190, 98)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -207,22 +313,22 @@ Partial Class Main
         Me.DataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(98, Byte), Integer), CType(CType(210, Byte), Integer))
         Me.DataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(181, 363)
+        Me.DataGridView1.Size = New System.Drawing.Size(199, 363)
         Me.DataGridView1.TabIndex = 3
         '
         'fileTextBox
         '
-        Me.fileTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer))
+        Me.fileTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.fileTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.fileTextBox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.fileTextBox.Enabled = False
-        Me.fileTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.fileTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.fileTextBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.fileTextBox.Location = New System.Drawing.Point(208, 8)
+        Me.fileTextBox.Location = New System.Drawing.Point(190, 8)
         Me.fileTextBox.Multiline = True
         Me.fileTextBox.Name = "fileTextBox"
         Me.fileTextBox.ReadOnly = True
-        Me.fileTextBox.Size = New System.Drawing.Size(181, 42)
+        Me.fileTextBox.Size = New System.Drawing.Size(199, 32)
         Me.fileTextBox.TabIndex = 2
         Me.fileTextBox.TabStop = False
         Me.fileTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -233,9 +339,10 @@ Partial Class Main
         Me.selectfileBtn.AutoSize = True
         Me.selectfileBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.selectfileBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.selectfileBtn.Location = New System.Drawing.Point(8, 18)
+        Me.selectfileBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
+        Me.selectfileBtn.Location = New System.Drawing.Point(8, 13)
         Me.selectfileBtn.Name = "selectfileBtn"
-        Me.selectfileBtn.Size = New System.Drawing.Size(194, 22)
+        Me.selectfileBtn.Size = New System.Drawing.Size(176, 22)
         Me.selectfileBtn.TabIndex = 1
         Me.selectfileBtn.Text = "Select a file"
         Me.selectfileBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -247,9 +354,10 @@ Partial Class Main
         Me.Label4.AutoSize = True
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(208, 73)
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(190, 73)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(181, 22)
+        Me.Label4.Size = New System.Drawing.Size(199, 22)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Employee List"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -261,9 +369,10 @@ Partial Class Main
         Me.Label5.AutoSize = True
         Me.Label5.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(8, 73)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(194, 22)
+        Me.Label5.Size = New System.Drawing.Size(176, 22)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Send to"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -276,9 +385,10 @@ Partial Class Main
         Me.Panel2.Controls.Add(Me.selected)
         Me.Panel2.Controls.Add(Me.everyone)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.Panel2.Location = New System.Drawing.Point(8, 98)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(194, 363)
+        Me.Panel2.Size = New System.Drawing.Size(176, 363)
         Me.Panel2.TabIndex = 7
         '
         'clearBtn
@@ -287,9 +397,10 @@ Partial Class Main
         Me.clearBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.clearBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.clearBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.clearBtn.Location = New System.Drawing.Point(0, 263)
         Me.clearBtn.Name = "clearBtn"
-        Me.clearBtn.Size = New System.Drawing.Size(191, 36)
+        Me.clearBtn.Size = New System.Drawing.Size(176, 36)
         Me.clearBtn.TabIndex = 4
         Me.clearBtn.Text = "Clear Selection"
         Me.clearBtn.UseVisualStyleBackColor = False
@@ -300,9 +411,10 @@ Partial Class Main
         Me.sendBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.sendBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.sendBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.sendBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.sendBtn.Location = New System.Drawing.Point(0, 210)
         Me.sendBtn.Name = "sendBtn"
-        Me.sendBtn.Size = New System.Drawing.Size(191, 36)
+        Me.sendBtn.Size = New System.Drawing.Size(173, 36)
         Me.sendBtn.TabIndex = 3
         Me.sendBtn.Text = "Send"
         Me.sendBtn.UseVisualStyleBackColor = False
@@ -311,6 +423,7 @@ Partial Class Main
         '
         Me.storage.AutoSize = True
         Me.storage.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.storage.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.storage.Location = New System.Drawing.Point(14, 119)
         Me.storage.Name = "storage"
         Me.storage.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
@@ -324,6 +437,7 @@ Partial Class Main
         '
         Me.selected.AutoSize = True
         Me.selected.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.selected.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.selected.Location = New System.Drawing.Point(14, 77)
         Me.selected.Name = "selected"
         Me.selected.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
@@ -337,6 +451,7 @@ Partial Class Main
         '
         Me.everyone.AutoSize = True
         Me.everyone.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.everyone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.everyone.Location = New System.Drawing.Point(14, 35)
         Me.everyone.Name = "everyone"
         Me.everyone.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
@@ -348,15 +463,15 @@ Partial Class Main
         '
         'chatPanel
         '
-        Me.chatPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer))
+        Me.chatPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.chatPanel.ColumnCount = 1
         Me.chatPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.chatPanel.Location = New System.Drawing.Point(635, 99)
+        Me.chatPanel.Location = New System.Drawing.Point(734, 98)
         Me.chatPanel.Name = "chatPanel"
         Me.chatPanel.RowCount = 1
         Me.chatPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.chatPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 351.0!))
-        Me.chatPanel.Size = New System.Drawing.Size(184, 351)
+        Me.chatPanel.Size = New System.Drawing.Size(177, 351)
         Me.chatPanel.TabIndex = 2
         '
         'Label3
@@ -364,7 +479,7 @@ Partial Class Main
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(635, 57)
+        Me.Label3.Location = New System.Drawing.Point(736, 53)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(106, 39)
         Me.Label3.TabIndex = 3
@@ -374,8 +489,9 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(848, 534)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(11, Byte), Integer), CType(CType(22, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(923, 534)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.chatPanel)
         Me.Controls.Add(Me.filesharePanel)
@@ -383,9 +499,14 @@ Partial Class Main
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Main"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.filesharePanel.ResumeLayout(False)
         Me.filesharePanel.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -398,7 +519,6 @@ Partial Class Main
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
     Friend WithEvents chatBtn As Label
     Friend WithEvents settingsBtn As Label
     Friend WithEvents fileshareBtn As Label
@@ -416,4 +536,13 @@ Partial Class Main
     Friend WithEvents selected As RadioButton
     Friend WithEvents everyone As RadioButton
     Friend WithEvents clearBtn As Button
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents displayName As Label
 End Class

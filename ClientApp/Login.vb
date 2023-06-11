@@ -47,9 +47,16 @@ Public Class LoginForm
                 ' Execute the update query
                 updateCmd.ExecuteNonQuery()
 
+                ' Retrieve the first name from the database
+                Dim firstName As String = RetrieveFirstName(username)
+
+                ' Open the Main form and pass the first name
+                Dim mainForm As New Main
+                mainForm.SetDisplayName(firstName)
+
                 ' Login successful
                 MessageBox.Show("Login successful!")
-                Main.Show()
+                mainForm.Show()
                 Me.Hide()
             Else
                 ' Close the reader before executing subsequent queries
@@ -80,6 +87,35 @@ Public Class LoginForm
             con.Close()
         End Try
     End Sub
+
+    Private Function RetrieveFirstName(username As String) As String
+        ' Create and execute an SQL query to retrieve the first name based on the username
+        Dim query As String = "SELECT firstname FROM tbl_employees WHERE username = @username"
+        Dim cmd As New MySqlCommand(query, con)
+        cmd.Parameters.AddWithValue("@username", username)
+
+        Dim firstName As String = ""
+
+        Try
+            If con.State = ConnectionState.Closed Then
+                con.Open()
+            End If
+
+            Dim result As Object = cmd.ExecuteScalar()
+            If result IsNot Nothing Then
+                firstName = result.ToString()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        Finally
+            If con.State = ConnectionState.Open Then
+                con.Close()
+            End If
+        End Try
+
+        Return firstName
+    End Function
+
 
     Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call connection()
