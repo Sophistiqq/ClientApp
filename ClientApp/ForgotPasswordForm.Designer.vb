@@ -30,6 +30,10 @@ Partial Class ForgotPasswordForm
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.newPasswordTextBox = New System.Windows.Forms.TextBox()
+        Me.confirmNewPasswordTextBox = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Cancel_Button
@@ -39,10 +43,10 @@ Partial Class ForgotPasswordForm
         Me.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Cancel_Button.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Cancel_Button.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(71, Byte), Integer))
-        Me.Cancel_Button.Location = New System.Drawing.Point(303, 275)
+        Me.Cancel_Button.Location = New System.Drawing.Point(330, 366)
         Me.Cancel_Button.Name = "Cancel_Button"
         Me.Cancel_Button.Size = New System.Drawing.Size(67, 23)
-        Me.Cancel_Button.TabIndex = 1
+        Me.Cancel_Button.TabIndex = 6
         Me.Cancel_Button.Text = "Cancel"
         Me.Cancel_Button.UseVisualStyleBackColor = False
         '
@@ -74,11 +78,11 @@ Partial Class ForgotPasswordForm
         Me.usernameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.usernameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.usernameTextBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.usernameTextBox.Location = New System.Drawing.Point(162, 97)
+        Me.usernameTextBox.Location = New System.Drawing.Point(195, 94)
         Me.usernameTextBox.Multiline = True
         Me.usernameTextBox.Name = "usernameTextBox"
         Me.usernameTextBox.Size = New System.Drawing.Size(174, 29)
-        Me.usernameTextBox.TabIndex = 3
+        Me.usernameTextBox.TabIndex = 1
         '
         'emailTextBox
         '
@@ -86,11 +90,11 @@ Partial Class ForgotPasswordForm
         Me.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.emailTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.emailTextBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.emailTextBox.Location = New System.Drawing.Point(162, 146)
+        Me.emailTextBox.Location = New System.Drawing.Point(195, 143)
         Me.emailTextBox.Multiline = True
         Me.emailTextBox.Name = "emailTextBox"
         Me.emailTextBox.Size = New System.Drawing.Size(174, 29)
-        Me.emailTextBox.TabIndex = 4
+        Me.emailTextBox.TabIndex = 2
         '
         'Label3
         '
@@ -108,10 +112,10 @@ Partial Class ForgotPasswordForm
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(98, Byte), Integer), CType(CType(210, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(122, 220)
+        Me.Button1.Location = New System.Drawing.Point(121, 318)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(132, 35)
-        Me.Button1.TabIndex = 6
+        Me.Button1.TabIndex = 5
         Me.Button1.Text = "Recover Password"
         Me.Button1.UseVisualStyleBackColor = False
         '
@@ -126,13 +130,63 @@ Partial Class ForgotPasswordForm
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "Recovery"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(33, 201)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(125, 20)
+        Me.Label5.TabIndex = 8
+        Me.Label5.Text = "New Password"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(33, 247)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(153, 20)
+        Me.Label6.TabIndex = 9
+        Me.Label6.Text = "Confirm Password"
+        '
+        'newPasswordTextBox
+        '
+        Me.newPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(71, Byte), Integer))
+        Me.newPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.newPasswordTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.newPasswordTextBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
+        Me.newPasswordTextBox.Location = New System.Drawing.Point(194, 195)
+        Me.newPasswordTextBox.Multiline = True
+        Me.newPasswordTextBox.Name = "newPasswordTextBox"
+        Me.newPasswordTextBox.Size = New System.Drawing.Size(174, 29)
+        Me.newPasswordTextBox.TabIndex = 3
+        '
+        'confirmNewPasswordTextBox
+        '
+        Me.confirmNewPasswordTextBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(71, Byte), Integer))
+        Me.confirmNewPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.confirmNewPasswordTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.confirmNewPasswordTextBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
+        Me.confirmNewPasswordTextBox.Location = New System.Drawing.Point(194, 239)
+        Me.confirmNewPasswordTextBox.Multiline = True
+        Me.confirmNewPasswordTextBox.Name = "confirmNewPasswordTextBox"
+        Me.confirmNewPasswordTextBox.Size = New System.Drawing.Size(174, 29)
+        Me.confirmNewPasswordTextBox.TabIndex = 4
+        '
         'ForgotPasswordForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(6, Byte), Integer))
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(387, 315)
+        Me.ClientSize = New System.Drawing.Size(409, 401)
+        Me.Controls.Add(Me.confirmNewPasswordTextBox)
+        Me.Controls.Add(Me.newPasswordTextBox)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Cancel_Button)
@@ -160,4 +214,8 @@ Partial Class ForgotPasswordForm
     Friend WithEvents Label3 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents newPasswordTextBox As TextBox
+    Friend WithEvents confirmNewPasswordTextBox As TextBox
 End Class

@@ -13,38 +13,60 @@ Public Class ForgotPasswordForm
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ' Retrieve the values from the textboxes
         Dim username As String = usernameTextBox.Text
         Dim email As String = emailTextBox.Text
+        Dim newPassword As String = newPasswordTextBox.Text
+        Dim confirmNewPassword As String = confirmNewPasswordTextBox.Text
 
-        ' Create the SQL query to retrieve the password for the given username and email
-        Dim query As String = "SELECT password FROM tbl_employee WHERE username = @username AND email = @email"
+        ' Perform validation on the input fields
+        If String.IsNullOrEmpty(username) OrElse String.IsNullOrEmpty(email) OrElse String.IsNullOrEmpty(newPassword) OrElse String.IsNullOrEmpty(confirmNewPassword) Then
+            MessageBox.Show("Please fill in all the fields.")
+            Return
+        End If
 
-        ' Create a MySqlCommand object and assign the query and connection
-        cmd = New MySqlCommand(query, con)
+        If newPassword <> confirmNewPassword Then
+            MessageBox.Show("The new password and confirm new password do not match.")
+            Return
+        End If
 
-        ' Set the parameters for the query
+        ' Update the password and last_password_change in the database
+        Dim updateQuery As String = "UPDATE tbl_employees SET password = @newPassword, last_password_change = CURRENT_TIMESTAMP() WHERE username = @username AND email = @email"
+
+        ' Create the command object with the update query and connection
+        Dim cmd As New MySqlCommand(updateQuery, con)
+
+        ' Set the parameter values for the update query
+        cmd.Parameters.AddWithValue("@newPassword", newPassword)
         cmd.Parameters.AddWithValue("@username", username)
         cmd.Parameters.AddWithValue("@email", email)
 
         Try
-            ' Open the database connection
+            ' Open the connection
             con.Open()
 
-            ' Execute the query and retrieve the result
-            Dim password As Object = cmd.ExecuteScalar()
+            ' Execute the update query
+            Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
 
-            If password IsNot Nothing Then
-                ' Password found, display it to the user
-                MessageBox.Show("Your password is: " & password.ToString())
+            ' Check if any rows were affected by the update
+            If rowsAffected > 0 Then
+                ' Password update successful
+                MessageBox.Show("Your password has been reset successfully.")
+
+                ' Close the dialog with DialogResult.OK
+                Me.DialogResult = DialogResult.OK
+                Me.Close()
             Else
-                ' No password found, display an error message
-                MessageBox.Show("Invalid username or email!")
+                ' Password update failed: Invalid username or email
+                MessageBox.Show("Invalid username or email.")
             End If
-
-            ' Close the database connection
-            con.Close()
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            ' Handle any errors that occurred during the password reset process
+            MessageBox.Show("An error occurred: " & ex.Message)
+        Finally
+            ' Close the connection
+            con.Close()
         End Try
     End Sub
+
 End Class

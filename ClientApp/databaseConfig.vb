@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-Module Module1
+Module databaseConfig
     Public con As New MySqlConnection
     Public cmd As New MySqlCommand
     Sub connection()
