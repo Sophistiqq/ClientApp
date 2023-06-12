@@ -6,14 +6,36 @@ Public Class Main
         ControlHelper.ApplyRoundedCorners(Panel1, 25)
         ControlHelper.ApplyRoundedCorners(chatPanel, 25)
         ControlHelper.ApplyRoundedCorners(filesharePanel, 25)
-        DataGridView1.ClearSelection()
+
+        LoadEmployeeData()
     End Sub
+
+
+
+
+    Private Sub LoadEmployeeData()
+
+        con.Open()
+
+        Dim query As String = "SELECT CONCAT(firstname, ' ', lastname) AS full_name FROM tbl_employees"
+        Dim adapter As New MySqlDataAdapter(query, con)
+        Dim dataTable As New DataTable()
+        adapter.Fill(dataTable)
+
+        ' Bind the DataTable to the DataGridView1
+        DataGridView1.DataSource = dataTable
+        DataGridView1.ColumnHeadersVisible = False
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    End Sub
+
+
 
 
     Private Sub settingsBtn_Click(sender As Object, e As EventArgs) Handles settingsBtn.Click
 
     End Sub
 
+    'File Selection Section ========================================================================
     Private Sub selectfileBtn_Click(sender As Object, e As EventArgs) Handles selectfileBtn.Click, fileTextBox.Click
         Dim openFileDialog As New OpenFileDialog()
 
@@ -29,17 +51,17 @@ Public Class Main
             fileTextBox.Text = selectedFile
         End If
     End Sub
+    'End of Selection Section ========================================================================
 
-    Private Sub filesharePanel_Paint(sender As Object, e As PaintEventArgs) Handles filesharePanel.Paint
 
-    End Sub
-
+    'This section handles the selection buttons ========================================================================
     Private Sub clearBtn_Click(sender As Object, e As EventArgs) Handles clearBtn.Click
+        DataGridView1.ClearSelection()
         everyone.Checked = False
         selected.Checked = False
         storage.Checked = False
-        DataGridView1.ClearSelection()
         DataGridView1.Enabled = False
+        fileTextBox.Text = ""
     End Sub
 
     Private Sub selected_CheckedChanged(sender As Object, e As EventArgs) Handles selected.CheckedChanged
@@ -58,10 +80,9 @@ Public Class Main
         DataGridView1.ClearSelection()
     End Sub
 
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs)
-
-    End Sub
     Public Sub SetDisplayName(firstName As String)
         displayName.Text = firstName
     End Sub
+
+    'End of selection buttons ====================================================================================
 End Class
