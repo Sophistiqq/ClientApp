@@ -3,78 +3,81 @@ Imports MySql.Data.MySqlClient
 
 Public Class Main
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadEmployeeData()
-        DisplayReceivedFiles()
-        ' Clear the DataGridView
-        filesReceived.Rows.Clear()
-        filesReceived.Columns.Clear()
-
-        ' Set the SelectionMode property of the filesReceived DataGridView to FullRowSelect
-        filesReceived.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-
+        Try
+            LoadEmployeeData()
+            DisplayStorageFiles()
+            DisplayReceivedFiles()
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while loading data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
-    Private Sub LoadEmployeeData()
-        'The connection string is on a module
-        con.Open()
-        Dim query As String = "SELECT CONCAT(firstname, ' ', lastname) AS full_name FROM tbl_employees"
-        Dim adapter As New MySqlDataAdapter(query, con)
-        Dim dataTable As New DataTable()
-        adapter.Fill(dataTable)
 
-        ' Bind the DataTable to the DataGridView1
-        DataGridView1.DataSource = dataTable
-        DataGridView1.ColumnHeadersVisible = False
-        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+    Private Sub LoadEmployeeData()
+        Using con As New MySqlConnection(connectionString)
+            con.Open()
+            Dim query As String = "SELECT CONCAT(firstname, ' ', lastname) AS full_name FROM tbl_employees"
+            Dim adapter As New MySqlDataAdapter(query, con)
+            Dim dataTable As New DataTable()
+            adapter.Fill(dataTable)
+
+            DataGridView1.DataSource = dataTable
+            DataGridView1.ColumnHeadersVisible = False
+            DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        End Using
+    End Sub
+
+
+    Private Sub DisplayStorageFiles()
+        storageFiles.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        storageFiles.Columns.Clear()
+
+        Using con As New MySqlConnection(connectionString)
+            con.Open()
+            Dim query As String = "SELECT filename FROM tbl_files WHERE sent_to = 'Storage'"
+            Dim adapter As New MySqlDataAdapter(query, con)
+            Dim dataTable As New DataTable()
+            adapter.Fill(dataTable)
+
+            storageFiles.DataSource = dataTable
+            storageFiles.Columns("filename").HeaderText = "Storage Files"
+            storageFiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            storageFiles.ColumnHeadersVisible = False
+        End Using
     End Sub
 
     Private Sub DisplayReceivedFiles()
-        'The connection string is on a module
-        con.Open()
-        Dim query As String = "SELECT filename FROM tbl_files WHERE sent_to = 'Storage'"
-        Dim adapter As New MySqlDataAdapter(query, con)
-        Dim dataTable As New DataTable()
-        adapter.Fill(dataTable)
+        receivedFiles.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        receivedFiles.Columns.Clear()
 
-        ' Bind the DataTable to the filesReceived DataGridView
-        filesReceived.DataSource = dataTable
-        filesReceived.Columns("filename").HeaderText = "Received Files"
-        filesReceived.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-        filesReceived.ColumnHeadersVisible = False
-        con.Close()
+        Using con As New MySqlConnection(connectionString)
+            con.Open()
+            Dim query As String = "SELECT filename FROM tbl_files WHERE sent_to = @employeeId"
+            Dim adapter As New MySqlDataAdapter(query, con)
+            adapter.SelectCommand.Parameters.AddWithValue("@employeeId", LoginForm.loggedInEmployeeId)
+            Dim dataTable As New DataTable()
+            adapter.Fill(dataTable)
+
+            receivedFiles.DataSource = dataTable
+            receivedFiles.Columns("filename").HeaderText = "Received Files"
+            receivedFiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+            receivedFiles.ColumnHeadersVisible = False
+        End Using
     End Sub
 
 
-
-
-
-    Private Sub settingsBtn_Click(sender As Object, e As EventArgs) Handles settingsBtn.Click
-
-    End Sub
-
-    'File Selection Section ========================================================================
     Private Sub selectfileBtn_Click(sender As Object, e As EventArgs) Handles selectfileBtn.Click, fileTextBox.Click
         Dim openFileDialog As New OpenFileDialog()
 
-        ' Set the properties of the OpenFileDialog as per your requirements
         openFileDialog.Title = "Select a File"
         openFileDialog.Filter = "Document Files (*.doc;*.docx;*.pdf)|*.doc;*.docx;*.pdf|Image Files (*.png;*.jpg;*.jpeg;*.gif)|*.png;*.jpg;*.jpeg;*.gif"
 
         If openFileDialog.ShowDialog() = DialogResult.OK Then
-            ' Get the selected file path
-            Dim selectedFilePath As String = openFileDialog.FileName
-
-            ' Display the selected file path in the TextBox
-            fileTextBox.Text = selectedFilePath
+            fileTextBox.Text = openFileDialog.FileName
         End If
     End Sub
 
 
-
-    'End of Selection Section ========================================================================
-
-
-    'This section handles the selection buttons ========================================================================
     Private Sub clearBtn_Click(sender As Object, e As EventArgs) Handles clearBtn.Click
         DataGridView1.ClearSelection()
         selected.Checked = False
@@ -103,119 +106,139 @@ Public Class Main
         displayName.Text = firstName
     End Sub
 
+
     Private Sub sendBtn_Click(sender As Object, e As EventArgs) Handles sendBtn.Click
-        ' Get the selected employee(s) from the DataGridView1
-        Dim selectedEmployees As New List(Of String)()
+        Try
+            Dim selectedEmployees As New List(Of String)()
 
-        For Each row As DataGridViewRow In DataGridView1.SelectedRows
-            Dim fullName As String = row.Cells("full_name").Value.ToString()
-            selectedEmployees.Add(fullName)
-        Next
+            For Each rowIndex As Integer In DataGridView1.SelectedCells.Cast(Of DataGridViewCell)().Select(Function(cell) cell.RowIndex).Distinct()
+                Dim fullName As String = DataGridView1.Rows(rowIndex).Cells("full_name").Value.ToString()
+                selectedEmployees.Add(fullName)
+            Next
 
-        ' Get the file details
-        Dim filePath As String = fileTextBox.Text ' Use the full file path instead of just the file name
-        Dim fileName As String = Path.GetFileName(filePath) ' Extract the file name from the full path
-        Dim sentTo As String = ""
 
-        If selected.Checked Then
-            sentTo = "Selected Employee(s)"
-        ElseIf storage.Checked Then
-            sentTo = "Storage"
-        End If
+            If selectedEmployees.Count > 0 AndAlso fileTextBox.Text <> "" Then
+                Dim fileName As String = Path.GetFileName(fileTextBox.Text)
+                Dim successCount As Integer = 0
 
-        ' Perform the file sharing action based on the sentTo value
-        If sentTo = "Selected Employee(s)" Then
-            ' Send the file to the selected employee(s) - implement your logic here
-        ElseIf sentTo = "Storage" Then
-            ' Store the file in the database
-            StoreFileInDatabase(filePath, fileName) ' Pass the full file path and file name
-        End If
+                For Each fullName As String In selectedEmployees
+                    Dim employeeId As String = GetEmployeeId(fullName)
 
-        ' Display the file in the receiver's table layout panel
-        'DisplayReceivedFile(selectedEmployees, fileName)
+                    If employeeId <> "" Then
+                        StoreFileInDatabase(fileName, employeeId)
+                        successCount += 1
+                    End If
+                Next
+
+                If successCount > 0 Then
+                    MessageBox.Show($"File sent successfully to {successCount} employee(s).", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Error: Failed to send file to any employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+
+                ' Clear the form after sending the file
+                clearBtn.PerformClick()
+                DisplayReceivedFiles()
+            Else
+                MessageBox.Show("Please select at least one employee and choose a file to send.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("An error occurred while sending the file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
-    Private Sub StoreFileInDatabase(filePath As String, fileName As String)
-        Dim fileData As Byte() = File.ReadAllBytes(filePath)
 
-        con.Open()
+    Private Function GetEmployeeId(fullName As String) As String
+        Dim employeeId As String = ""
 
-        Dim query As String = "INSERT INTO tbl_files (filename, file_data, sender_id, sent_to, sent_date) VALUES (@filename, @fileData, @senderId, @sentTo, @sentDate)"
+        Using con As New MySqlConnection(connectionString)
+            con.Open()
+            Dim query As String = "SELECT id FROM tbl_employees WHERE CONCAT(firstname, ' ', lastname) = @fullName"
+            Dim cmd As New MySqlCommand(query, con)
+            cmd.Parameters.AddWithValue("@fullName", fullName)
+            cmd.ExecuteNonQuery()
 
-        Using command As New MySqlCommand(query, con)
-            command.Parameters.AddWithValue("@filename", fileName)
-            command.Parameters.AddWithValue("@fileData", fileData)
-            command.Parameters.AddWithValue("@senderId", LoginForm.loggedInEmployeeId)
-            command.Parameters.AddWithValue("@sentTo", "Storage")
-            command.Parameters.AddWithValue("@sentDate", DateTime.Now)
+            Dim result As Object = cmd.ExecuteScalar()
 
-            command.ExecuteNonQuery()
+            If result IsNot Nothing Then
+                employeeId = result.ToString()
+                MessageBox.Show($"Employee ID for {fullName}: {employeeId}", "Employee ID", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Error: Failed to retrieve employee ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
         End Using
 
-        con.Close()
+        Return employeeId
+    End Function
+    Private Sub StoreFileInDatabase(fileName As String, employeeId As String)
+        Dim fileBytes As Byte() = File.ReadAllBytes(fileTextBox.Text)
+
+        Using con As New MySqlConnection(connectionString)
+            con.Open()
+            Dim query As String = "INSERT INTO tbl_files (filename, file_data, sent_to) VALUES (@filename, @file_data, @employeeId)"
+            Dim cmd As New MySqlCommand(query, con)
+            cmd.Parameters.AddWithValue("@filename", fileName)
+            cmd.Parameters.AddWithValue("@file_data", fileBytes)
+            cmd.Parameters.AddWithValue("@employeeId", employeeId)
+            cmd.ExecuteNonQuery()
+        End Using
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        DisplayStorageFiles()
         DisplayReceivedFiles()
     End Sub
 
     Private Sub downloadBtn_Click(sender As Object, e As EventArgs) Handles downloadBtn.Click
-        ' Check if any row is selected in the filesReceived DataGridView
-        If filesReceived.SelectedCells.Count > 0 Then
-            ' Get the index of the filename column
-            Dim filenameColumnIndex As Integer = filesReceived.Columns("filename").Index
-
-            ' Get the filename from the selected cell
-            Dim selectedFilename As String = filesReceived.SelectedCells(filenameColumnIndex).Value.ToString()
-
-            ' Create a SaveFileDialog to prompt the user for the download location
+        If storageFiles.SelectedCells.Count > 0 Then
+            Dim filenameColumnIndex As Integer = storageFiles.Columns("filename").Index
+            Dim selectedFilename As String = storageFiles.SelectedCells(filenameColumnIndex).Value.ToString()
             Dim saveFileDialog As New SaveFileDialog()
             saveFileDialog.FileName = selectedFilename
-
-            ' Display the SaveFileDialog and get the result
             Dim result As DialogResult = saveFileDialog.ShowDialog()
-
-            ' If the user clicked the Save button in the SaveFileDialog, proceed with the file download
             If result = DialogResult.OK Then
-                ' Get the file data from the database based on the selected filename
                 Dim fileData As Byte() = GetFileDataFromDatabase(selectedFilename)
-
-                ' Save the file to the selected location
                 File.WriteAllBytes(saveFileDialog.FileName, fileData)
-
-                ' Show a success message to the user
                 MessageBox.Show("File downloaded successfully.")
             End If
         Else
-            ' No cell is selected, display an error message
             MessageBox.Show("Please select a file to download.")
         End If
     End Sub
 
     Private Function GetFileDataFromDatabase(filename As String) As Byte()
         Dim fileData As Byte() = Nothing
+        Using con As New MySqlConnection(connectionString)
+            con.Open()
 
-        con.Open()
+            Dim query As String = "SELECT file_data FROM tbl_files WHERE filename = @filename"
+            Using command As New MySqlCommand(query, con)
+                command.Parameters.AddWithValue("@filename", filename)
 
-        Dim query As String = "SELECT file_data FROM tbl_files WHERE filename = @filename"
-        Using command As New MySqlCommand(query, con)
-            command.Parameters.AddWithValue("@filename", filename)
+                Dim result As Object = command.ExecuteScalar()
+                If result IsNot Nothing Then
+                    fileData = DirectCast(result, Byte())
+                End If
+            End Using
 
-            Dim result As Object = command.ExecuteScalar()
-            If result IsNot Nothing Then
-                fileData = DirectCast(result, Byte())
-            End If
+            con.Close()
+
+            Return fileData
         End Using
-
-        con.Close()
-
-        Return fileData
     End Function
 
+    Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to Log out?", "Confirm Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.Yes Then
+            LoginForm.Show()
+            Me.Close()
+        End If
+    End Sub
 
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
+        If Me.WindowState = FormWindowState.Normal Then
+            Me.WindowState = FormWindowState.Minimized
+        End If
+    End Sub
 
-
-
-
-    'End of selection buttons ====================================================================================
 End Class
