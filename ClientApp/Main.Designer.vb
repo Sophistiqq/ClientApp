@@ -51,9 +51,11 @@ Partial Class Main
         Me.sendBtn = New System.Windows.Forms.Button()
         Me.storage = New System.Windows.Forms.RadioButton()
         Me.selected = New System.Windows.Forms.RadioButton()
-        Me.everyone = New System.Windows.Forms.RadioButton()
         Me.chatPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.downloadBtn = New System.Windows.Forms.Button()
+        Me.filesReceived = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,6 +66,8 @@ Partial Class Main
         Me.filesharePanel.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        Me.chatPanel.SuspendLayout()
+        CType(Me.filesReceived, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -242,7 +246,7 @@ Partial Class Main
         Me.filesharePanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.filesharePanel.ColumnCount = 2
         Me.filesharePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.filesharePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205.0!))
+        Me.filesharePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 208.0!))
         Me.filesharePanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.filesharePanel.Controls.Add(Me.DataGridView1, 1, 2)
         Me.filesharePanel.Controls.Add(Me.fileTextBox, 1, 0)
@@ -251,14 +255,14 @@ Partial Class Main
         Me.filesharePanel.Controls.Add(Me.Label5, 0, 1)
         Me.filesharePanel.Controls.Add(Me.Panel2, 0, 2)
         Me.filesharePanel.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize
-        Me.filesharePanel.Location = New System.Drawing.Point(318, 25)
+        Me.filesharePanel.Location = New System.Drawing.Point(285, 40)
         Me.filesharePanel.Name = "filesharePanel"
         Me.filesharePanel.Padding = New System.Windows.Forms.Padding(5)
         Me.filesharePanel.RowCount = 3
-        Me.filesharePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.278867!))
-        Me.filesharePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.32898!))
+        Me.filesharePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.137055!))
+        Me.filesharePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.15228!))
         Me.filesharePanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.17429!))
-        Me.filesharePanel.Size = New System.Drawing.Size(397, 469)
+        Me.filesharePanel.Size = New System.Drawing.Size(397, 404)
         Me.filesharePanel.TabIndex = 1
         '
         'DataGridView1
@@ -289,7 +293,7 @@ Partial Class Main
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Enabled = False
         Me.DataGridView1.GridColor = System.Drawing.Color.Black
-        Me.DataGridView1.Location = New System.Drawing.Point(190, 98)
+        Me.DataGridView1.Location = New System.Drawing.Point(187, 84)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -313,7 +317,7 @@ Partial Class Main
         Me.DataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.DataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(11, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(199, 363)
+        Me.DataGridView1.Size = New System.Drawing.Size(202, 312)
         Me.DataGridView1.TabIndex = 3
         '
         'fileTextBox
@@ -324,11 +328,11 @@ Partial Class Main
         Me.fileTextBox.Enabled = False
         Me.fileTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.fileTextBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.fileTextBox.Location = New System.Drawing.Point(190, 8)
+        Me.fileTextBox.Location = New System.Drawing.Point(187, 8)
         Me.fileTextBox.Multiline = True
         Me.fileTextBox.Name = "fileTextBox"
         Me.fileTextBox.ReadOnly = True
-        Me.fileTextBox.Size = New System.Drawing.Size(199, 32)
+        Me.fileTextBox.Size = New System.Drawing.Size(202, 30)
         Me.fileTextBox.TabIndex = 2
         Me.fileTextBox.TabStop = False
         Me.fileTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -340,9 +344,9 @@ Partial Class Main
         Me.selectfileBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.selectfileBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.selectfileBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.selectfileBtn.Location = New System.Drawing.Point(8, 13)
+        Me.selectfileBtn.Location = New System.Drawing.Point(8, 12)
         Me.selectfileBtn.Name = "selectfileBtn"
-        Me.selectfileBtn.Size = New System.Drawing.Size(176, 22)
+        Me.selectfileBtn.Size = New System.Drawing.Size(173, 22)
         Me.selectfileBtn.TabIndex = 1
         Me.selectfileBtn.Text = "Select a file"
         Me.selectfileBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -355,9 +359,9 @@ Partial Class Main
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(190, 73)
+        Me.Label4.Location = New System.Drawing.Point(187, 59)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(199, 22)
+        Me.Label4.Size = New System.Drawing.Size(202, 22)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Employee List"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -370,9 +374,9 @@ Partial Class Main
         Me.Label5.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(8, 73)
+        Me.Label5.Location = New System.Drawing.Point(8, 59)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(176, 22)
+        Me.Label5.Size = New System.Drawing.Size(173, 22)
         Me.Label5.TabIndex = 6
         Me.Label5.Text = "Send to"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -383,12 +387,11 @@ Partial Class Main
         Me.Panel2.Controls.Add(Me.sendBtn)
         Me.Panel2.Controls.Add(Me.storage)
         Me.Panel2.Controls.Add(Me.selected)
-        Me.Panel2.Controls.Add(Me.everyone)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.Panel2.Location = New System.Drawing.Point(8, 98)
+        Me.Panel2.Location = New System.Drawing.Point(8, 84)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(176, 363)
+        Me.Panel2.Size = New System.Drawing.Size(173, 312)
         Me.Panel2.TabIndex = 7
         '
         'clearBtn
@@ -398,7 +401,7 @@ Partial Class Main
         Me.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.clearBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.clearBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.clearBtn.Location = New System.Drawing.Point(0, 263)
+        Me.clearBtn.Location = New System.Drawing.Point(0, 213)
         Me.clearBtn.Name = "clearBtn"
         Me.clearBtn.Size = New System.Drawing.Size(176, 36)
         Me.clearBtn.TabIndex = 4
@@ -412,7 +415,7 @@ Partial Class Main
         Me.sendBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.sendBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.sendBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.sendBtn.Location = New System.Drawing.Point(0, 210)
+        Me.sendBtn.Location = New System.Drawing.Point(0, 160)
         Me.sendBtn.Name = "sendBtn"
         Me.sendBtn.Size = New System.Drawing.Size(173, 36)
         Me.sendBtn.TabIndex = 3
@@ -424,7 +427,7 @@ Partial Class Main
         Me.storage.AutoSize = True
         Me.storage.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.storage.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.storage.Location = New System.Drawing.Point(14, 119)
+        Me.storage.Location = New System.Drawing.Point(23, 64)
         Me.storage.Name = "storage"
         Me.storage.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.storage.Size = New System.Drawing.Size(99, 24)
@@ -438,7 +441,7 @@ Partial Class Main
         Me.selected.AutoSize = True
         Me.selected.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.selected.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.selected.Location = New System.Drawing.Point(14, 77)
+        Me.selected.Location = New System.Drawing.Point(23, 22)
         Me.selected.Name = "selected"
         Me.selected.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.selected.Size = New System.Drawing.Size(137, 24)
@@ -447,51 +450,78 @@ Partial Class Main
         Me.selected.Text = "Selected only"
         Me.selected.UseVisualStyleBackColor = True
         '
-        'everyone
-        '
-        Me.everyone.AutoSize = True
-        Me.everyone.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.everyone.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.everyone.Location = New System.Drawing.Point(14, 35)
-        Me.everyone.Name = "everyone"
-        Me.everyone.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
-        Me.everyone.Size = New System.Drawing.Size(108, 24)
-        Me.everyone.TabIndex = 0
-        Me.everyone.TabStop = True
-        Me.everyone.Text = "Everyone"
-        Me.everyone.UseVisualStyleBackColor = True
-        '
         'chatPanel
         '
         Me.chatPanel.BackColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.chatPanel.ColumnCount = 1
         Me.chatPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.chatPanel.Location = New System.Drawing.Point(734, 98)
+        Me.chatPanel.Controls.Add(Me.filesReceived, 0, 0)
+        Me.chatPanel.Location = New System.Drawing.Point(695, 93)
         Me.chatPanel.Name = "chatPanel"
         Me.chatPanel.RowCount = 1
         Me.chatPanel.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.chatPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 351.0!))
-        Me.chatPanel.Size = New System.Drawing.Size(177, 351)
+        Me.chatPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 318.0!))
+        Me.chatPanel.Size = New System.Drawing.Size(262, 203)
         Me.chatPanel.TabIndex = 2
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!)
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(736, 53)
+        Me.Label3.Location = New System.Drawing.Point(688, 48)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(106, 39)
+        Me.Label3.Size = New System.Drawing.Size(116, 22)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Chats"
+        Me.Label3.Text = "Storage FIles"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(874, 21)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(80, 29)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Refresh"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'downloadBtn
+        '
+        Me.downloadBtn.BackColor = System.Drawing.Color.Transparent
+        Me.downloadBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.downloadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.downloadBtn.ForeColor = System.Drawing.Color.White
+        Me.downloadBtn.Location = New System.Drawing.Point(874, 61)
+        Me.downloadBtn.Name = "downloadBtn"
+        Me.downloadBtn.Size = New System.Drawing.Size(80, 29)
+        Me.downloadBtn.TabIndex = 5
+        Me.downloadBtn.Text = "Download"
+        Me.downloadBtn.UseVisualStyleBackColor = False
+        '
+        'filesReceived
+        '
+        Me.filesReceived.AllowUserToAddRows = False
+        Me.filesReceived.AllowUserToDeleteRows = False
+        Me.filesReceived.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.filesReceived.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.filesReceived.Location = New System.Drawing.Point(3, 3)
+        Me.filesReceived.Name = "filesReceived"
+        Me.filesReceived.ReadOnly = True
+        Me.filesReceived.Size = New System.Drawing.Size(256, 197)
+        Me.filesReceived.TabIndex = 0
         '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(11, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(923, 534)
+        Me.ClientSize = New System.Drawing.Size(976, 534)
         Me.ControlBox = False
+        Me.Controls.Add(Me.downloadBtn)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.chatPanel)
         Me.Controls.Add(Me.filesharePanel)
@@ -512,6 +542,8 @@ Partial Class Main
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.chatPanel.ResumeLayout(False)
+        CType(Me.filesReceived, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -534,7 +566,6 @@ Partial Class Main
     Friend WithEvents sendBtn As Button
     Friend WithEvents storage As RadioButton
     Friend WithEvents selected As RadioButton
-    Friend WithEvents everyone As RadioButton
     Friend WithEvents clearBtn As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents PictureBox1 As PictureBox
@@ -545,4 +576,7 @@ Partial Class Main
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents displayName As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents downloadBtn As Button
+    Friend WithEvents filesReceived As DataGridView
 End Class

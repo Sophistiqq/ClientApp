@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class LoginForm
+    Public loggedInEmployeeId As Integer
     Private Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
         Dim username As String = usernameBox.Text
         Dim password As String = passwordBox.Text
@@ -25,6 +26,7 @@ Public Class LoginForm
             ' Check if any rows are returned
             If reader.Read() Then
                 ' Retrieve the employee information from the reader
+                loggedInEmployeeId = reader.GetInt32("id")
                 Dim employeeId As Integer = reader.GetInt32("id")
                 Dim loginAttempts As Integer = reader.GetInt32("loginFailedAttempts")
 
