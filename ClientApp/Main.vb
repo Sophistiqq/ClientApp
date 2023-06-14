@@ -7,6 +7,8 @@ Public Class Main
             LoadEmployeeData()
             DisplayStorageFiles()
             DisplayReceivedFiles()
+            receivedFiles.ClearSelection()
+            storageFiles.ClearSelection()
         Catch ex As Exception
             MessageBox.Show("An error occurred while loading data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -108,43 +110,77 @@ Public Class Main
 
 
     Private Sub sendBtn_Click(sender As Object, e As EventArgs) Handles sendBtn.Click
-        Try
-            Dim selectedEmployees As New List(Of String)()
-
-            For Each rowIndex As Integer In DataGridView1.SelectedCells.Cast(Of DataGridViewCell)().Select(Function(cell) cell.RowIndex).Distinct()
-                Dim fullName As String = DataGridView1.Rows(rowIndex).Cells("full_name").Value.ToString()
-                selectedEmployees.Add(fullName)
-            Next
-
-
-            If selectedEmployees.Count > 0 AndAlso fileTextBox.Text <> "" Then
-                Dim fileName As String = Path.GetFileName(fileTextBox.Text)
-                Dim successCount As Integer = 0
-
-                For Each fullName As String In selectedEmployees
-                    Dim employeeId As String = GetEmployeeId(fullName)
-
-                    If employeeId <> "" Then
-                        StoreFileInDatabase(fileName, employeeId)
-                        successCount += 1
-                    End If
-                Next
-
-                If successCount > 0 Then
-                    MessageBox.Show($"File sent successfully to {successCount} employee(s).", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    MessageBox.Show("Error: Failed to send file to any employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'If storage is checked, send the file into tbl_files with the "Storage" set in the sent_to column
+        If storage.Checked Then
+            Try
+                ' Check if a file is selected
+                If fileTextBox.Text = "" Then
+                    MessageBox.Show("Please choose a file to store.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
                 End If
 
-                ' Clear the form after sending the file
+                ' Store the file in the database
+                Dim fileName As String = Path.GetFileName(fileTextBox.Text)
+                Dim fileBytes As Byte() = File.ReadAllBytes(fileTextBox.Text)
+
+                Using con As New MySqlConnection(connectionString)
+                    con.Open()
+                    Dim query As String = "INSERT INTO tbl_files (filename, file_data, sent_to) VALUES (@filename, @file_data, 'Storage')"
+                    Dim cmd As New MySqlCommand(query, con)
+                    cmd.Parameters.AddWithValue("@filename", fileName)
+                    cmd.Parameters.AddWithValue("@file_data", fileBytes)
+                    cmd.ExecuteNonQuery()
+                End Using
+
+                MessageBox.Show("File stored successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                ' Clear the form after storing the file
                 clearBtn.PerformClick()
                 DisplayReceivedFiles()
-            Else
-                MessageBox.Show("Please select at least one employee and choose a file to send.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-        Catch ex As Exception
-            MessageBox.Show("An error occurred while sending the file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+            Catch ex As Exception
+                MessageBox.Show("An error occurred while storing the file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+
+        If selected.Checked Then
+            Try
+                Dim selectedEmployees As New List(Of String)()
+
+                For Each rowIndex As Integer In DataGridView1.SelectedCells.Cast(Of DataGridViewCell)().Select(Function(cell) cell.RowIndex).Distinct()
+                    Dim fullName As String = DataGridView1.Rows(rowIndex).Cells("full_name").Value.ToString()
+                    selectedEmployees.Add(fullName)
+                Next
+
+
+                If selectedEmployees.Count > 0 AndAlso fileTextBox.Text <> "" Then
+                    Dim fileName As String = Path.GetFileName(fileTextBox.Text)
+                    Dim successCount As Integer = 0
+
+                    For Each fullName As String In selectedEmployees
+                        Dim employeeId As String = GetEmployeeId(fullName)
+
+                        If employeeId <> "" Then
+                            StoreFileInDatabase(fileName, employeeId)
+                            successCount += 1
+                        End If
+                    Next
+
+                    If successCount > 0 Then
+                        MessageBox.Show($"File sent successfully to {successCount} employee(s).", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Else
+                        MessageBox.Show("Error: Failed to send file to any employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+
+                    ' Clear the form after sending the file
+                    clearBtn.PerformClick()
+                    DisplayReceivedFiles()
+                Else
+                    MessageBox.Show("Please select at least one employee and choose a file to send.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Catch ex As Exception
+                MessageBox.Show("An error occurred while sending the file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
     End Sub
 
 
@@ -184,15 +220,34 @@ Public Class Main
         End Using
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         DisplayStorageFiles()
         DisplayReceivedFiles()
+        receivedFiles.ClearSelection()
+        storageFiles.ClearSelection()
     End Sub
 
-    Private Sub downloadBtn_Click(sender As Object, e As EventArgs) Handles downloadBtn.Click
+    Private Sub downloadBtn_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
         If storageFiles.SelectedCells.Count > 0 Then
             Dim filenameColumnIndex As Integer = storageFiles.Columns("filename").Index
             Dim selectedFilename As String = storageFiles.SelectedCells(filenameColumnIndex).Value.ToString()
+            Dim saveFileDialog As New SaveFileDialog()
+            saveFileDialog.FileName = selectedFilename
+            Dim result As DialogResult = saveFileDialog.ShowDialog()
+            If result = DialogResult.OK Then
+                Dim fileData As Byte() = GetFileDataFromDatabase(selectedFilename)
+                File.WriteAllBytes(saveFileDialog.FileName, fileData)
+                MessageBox.Show("File downloaded successfully.")
+            End If
+        Else
+            MessageBox.Show("Please select a file to download.")
+        End If
+    End Sub
+
+    Private Sub receivedDownloadBtn_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
+        If receivedFiles.SelectedCells.Count > 0 Then
+            Dim filenameColumnIndex As Integer = receivedFiles.Columns("filename").Index
+            Dim selectedFilename As String = receivedFiles.SelectedCells(filenameColumnIndex).Value.ToString()
             Dim saveFileDialog As New SaveFileDialog()
             saveFileDialog.FileName = selectedFilename
             Dim result As DialogResult = saveFileDialog.ShowDialog()
@@ -240,5 +295,45 @@ Public Class Main
             Me.WindowState = FormWindowState.Minimized
         End If
     End Sub
+
+    Private Sub deleteFileBtn_Click(sender As Object, e As EventArgs) Handles deleteFileBtn.Click
+        If receivedFiles.SelectedRows.Count > 0 Then
+            ' Get the selected row
+            Dim selectedRow As DataGridViewRow = receivedFiles.SelectedRows(0)
+
+            ' Get the filename
+            Dim filename As String = selectedRow.Cells("filename").Value.ToString()
+
+            ' Confirm the deletion with the user
+            Dim result As DialogResult = MessageBox.Show("Are you sure you want to delete this file?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+            If result = DialogResult.Yes Then
+                Try
+                    ' Delete the file from the database
+                    DeleteFile(filename)
+
+                    ' Refresh the displayed files
+                    DisplayReceivedFiles()
+                Catch ex As Exception
+                    MessageBox.Show("An error occurred while deleting the file: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        Else
+            MessageBox.Show("Please select a file to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub DeleteFile(filename As String)
+        Using con As New MySqlConnection(connectionString)
+            con.Open()
+            Dim query As String = "DELETE FROM tbl_files WHERE filename = @filename"
+            Dim cmd As New MySqlCommand(query, con)
+            cmd.Parameters.AddWithValue("@filename", filename)
+            cmd.ExecuteNonQuery()
+        End Using
+
+        MessageBox.Show("File deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
 
 End Class

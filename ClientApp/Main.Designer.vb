@@ -32,14 +32,11 @@ Partial Class Main
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.displayName = New System.Windows.Forms.Label()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.chatBtn = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.fileshareBtn = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.filesharePanel = New System.Windows.Forms.TableLayoutPanel()
@@ -56,28 +53,39 @@ Partial Class Main
         Me.chatPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.storageFiles = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.downloadBtn = New System.Windows.Forms.Button()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.closeBtn = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.receivedFiles = New System.Windows.Forms.DataGridView()
+        Me.deleteFileBtn = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.closeBtn = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.filesharePanel.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.chatPanel.SuspendLayout()
         CType(Me.storageFiles, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.receivedFiles, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.deleteFileBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -108,16 +116,6 @@ Partial Class Main
         Me.displayName.Size = New System.Drawing.Size(57, 22)
         Me.displayName.TabIndex = 14
         Me.displayName.Text = "Name"
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.ClientApp.My.Resources.Resources.avatar
-        Me.PictureBox4.Location = New System.Drawing.Point(39, 40)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(50, 50)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 13
-        Me.PictureBox4.TabStop = False
         '
         'TextBox2
         '
@@ -155,17 +153,6 @@ Partial Class Main
         Me.Panel4.Size = New System.Drawing.Size(200, 44)
         Me.Panel4.TabIndex = 6
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PictureBox2.Image = Global.ClientApp.My.Resources.Resources.chat_fixed
-        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(44, 38)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox2.TabIndex = 3
-        Me.PictureBox2.TabStop = False
-        '
         'chatBtn
         '
         Me.chatBtn.Cursor = System.Windows.Forms.Cursors.Hand
@@ -189,17 +176,6 @@ Partial Class Main
         Me.Panel3.Padding = New System.Windows.Forms.Padding(3)
         Me.Panel3.Size = New System.Drawing.Size(200, 44)
         Me.Panel3.TabIndex = 5
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PictureBox1.Image = Global.ClientApp.My.Resources.Resources.file_share
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(44, 38)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
         '
         'fileshareBtn
         '
@@ -409,12 +385,14 @@ Partial Class Main
         'storage
         '
         Me.storage.AutoSize = True
+        Me.storage.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.storage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.storage.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.storage.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.storage.Location = New System.Drawing.Point(23, 64)
         Me.storage.Name = "storage"
         Me.storage.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
-        Me.storage.Size = New System.Drawing.Size(99, 24)
+        Me.storage.Size = New System.Drawing.Size(98, 24)
         Me.storage.TabIndex = 2
         Me.storage.TabStop = True
         Me.storage.Text = "Storage"
@@ -423,12 +401,14 @@ Partial Class Main
         'selected
         '
         Me.selected.AutoSize = True
+        Me.selected.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.selected.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.selected.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.selected.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
         Me.selected.Location = New System.Drawing.Point(23, 22)
         Me.selected.Name = "selected"
         Me.selected.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
-        Me.selected.Size = New System.Drawing.Size(137, 24)
+        Me.selected.Size = New System.Drawing.Size(136, 24)
         Me.selected.TabIndex = 1
         Me.selected.TabStop = True
         Me.selected.Text = "Selected only"
@@ -465,7 +445,7 @@ Partial Class Main
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(41, Byte), Integer))
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.storageFiles.DefaultCellStyle = DataGridViewCellStyle5
-        Me.storageFiles.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.storageFiles.GridColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(11, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.storageFiles.Location = New System.Drawing.Point(3, 3)
         Me.storageFiles.MultiSelect = False
         Me.storageFiles.Name = "storageFiles"
@@ -477,7 +457,7 @@ Partial Class Main
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(21, Byte), Integer), CType(CType(22, Byte), Integer), CType(CType(41, Byte), Integer))
         Me.storageFiles.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.storageFiles.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        Me.storageFiles.Size = New System.Drawing.Size(256, 197)
+        Me.storageFiles.Size = New System.Drawing.Size(256, 175)
         Me.storageFiles.TabIndex = 0
         '
         'Label3
@@ -490,56 +470,6 @@ Partial Class Main
         Me.Label3.Size = New System.Drawing.Size(116, 22)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Storage FIles"
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(882, 55)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(80, 29)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Refresh"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'downloadBtn
-        '
-        Me.downloadBtn.BackColor = System.Drawing.Color.Transparent
-        Me.downloadBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.downloadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.downloadBtn.ForeColor = System.Drawing.Color.White
-        Me.downloadBtn.Location = New System.Drawing.Point(882, 95)
-        Me.downloadBtn.Name = "downloadBtn"
-        Me.downloadBtn.Size = New System.Drawing.Size(80, 29)
-        Me.downloadBtn.TabIndex = 5
-        Me.downloadBtn.Text = "Download"
-        Me.downloadBtn.UseVisualStyleBackColor = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox6.Image = Global.ClientApp.My.Resources.Resources.minimized_fixed
-        Me.PictureBox6.Location = New System.Drawing.Point(887, 3)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(40, 40)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox6.TabIndex = 20
-        Me.PictureBox6.TabStop = False
-        '
-        'closeBtn
-        '
-        Me.closeBtn.BackColor = System.Drawing.Color.Transparent
-        Me.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.closeBtn.Image = Global.ClientApp.My.Resources.Resources.close
-        Me.closeBtn.Location = New System.Drawing.Point(933, 3)
-        Me.closeBtn.Name = "closeBtn"
-        Me.closeBtn.Size = New System.Drawing.Size(40, 40)
-        Me.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.closeBtn.TabIndex = 19
-        Me.closeBtn.TabStop = False
         '
         'Label1
         '
@@ -584,6 +514,7 @@ Partial Class Main
         DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.receivedFiles.DefaultCellStyle = DataGridViewCellStyle7
         Me.receivedFiles.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.receivedFiles.GridColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(11, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.receivedFiles.Location = New System.Drawing.Point(3, 3)
         Me.receivedFiles.MultiSelect = False
         Me.receivedFiles.Name = "receivedFiles"
@@ -598,19 +529,138 @@ Partial Class Main
         Me.receivedFiles.Size = New System.Drawing.Size(256, 197)
         Me.receivedFiles.TabIndex = 0
         '
+        'deleteFileBtn
+        '
+        Me.deleteFileBtn.BackColor = System.Drawing.Color.Transparent
+        Me.deleteFileBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.deleteFileBtn.Image = Global.ClientApp.My.Resources.Resources.delete
+        Me.deleteFileBtn.Location = New System.Drawing.Point(935, 323)
+        Me.deleteFileBtn.Name = "deleteFileBtn"
+        Me.deleteFileBtn.Size = New System.Drawing.Size(25, 25)
+        Me.deleteFileBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.deleteFileBtn.TabIndex = 26
+        Me.deleteFileBtn.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox7.Image = Global.ClientApp.My.Resources.Resources.download
+        Me.PictureBox7.Location = New System.Drawing.Point(935, 95)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(25, 25)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox7.TabIndex = 25
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox8.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox8.Image = Global.ClientApp.My.Resources.Resources.refresh
+        Me.PictureBox8.Location = New System.Drawing.Point(899, 96)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(25, 25)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox8.TabIndex = 24
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox5.Image = Global.ClientApp.My.Resources.Resources.download
+        Me.PictureBox5.Location = New System.Drawing.Point(899, 323)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(25, 25)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox5.TabIndex = 23
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox3.Image = Global.ClientApp.My.Resources.Resources.refresh
+        Me.PictureBox3.Location = New System.Drawing.Point(861, 323)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(25, 25)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox3.TabIndex = 22
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox6.Image = Global.ClientApp.My.Resources.Resources.minimized_fixed
+        Me.PictureBox6.Location = New System.Drawing.Point(896, 6)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox6.TabIndex = 20
+        Me.PictureBox6.TabStop = False
+        '
+        'closeBtn
+        '
+        Me.closeBtn.BackColor = System.Drawing.Color.Transparent
+        Me.closeBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.closeBtn.Image = Global.ClientApp.My.Resources.Resources.close
+        Me.closeBtn.Location = New System.Drawing.Point(942, 6)
+        Me.closeBtn.Name = "closeBtn"
+        Me.closeBtn.Size = New System.Drawing.Size(40, 40)
+        Me.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.closeBtn.TabIndex = 19
+        Me.closeBtn.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.ClientApp.My.Resources.Resources.avatar
+        Me.PictureBox4.Location = New System.Drawing.Point(39, 40)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 13
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PictureBox2.Image = Global.ClientApp.My.Resources.Resources.chat_fixed
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(44, 38)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PictureBox1.Image = Global.ClientApp.My.Resources.Resources.file_share
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(44, 38)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(11, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(976, 570)
+        Me.ClientSize = New System.Drawing.Size(987, 570)
         Me.ControlBox = False
+        Me.Controls.Add(Me.deleteFileBtn)
+        Me.Controls.Add(Me.PictureBox7)
+        Me.Controls.Add(Me.PictureBox8)
+        Me.Controls.Add(Me.PictureBox5)
+        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.closeBtn)
-        Me.Controls.Add(Me.downloadBtn)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.chatPanel)
         Me.Controls.Add(Me.filesharePanel)
@@ -623,11 +673,8 @@ Partial Class Main
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.filesharePanel.ResumeLayout(False)
         Me.filesharePanel.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -635,10 +682,18 @@ Partial Class Main
         Me.Panel2.PerformLayout()
         Me.chatPanel.ResumeLayout(False)
         CType(Me.storageFiles, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         CType(Me.receivedFiles, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.deleteFileBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -669,12 +724,15 @@ Partial Class Main
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents displayName As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents downloadBtn As Button
     Friend WithEvents storageFiles As DataGridView
     Friend WithEvents closeBtn As PictureBox
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents receivedFiles As DataGridView
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents deleteFileBtn As PictureBox
 End Class
