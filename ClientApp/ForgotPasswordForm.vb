@@ -31,11 +31,18 @@ Public Class ForgotPasswordForm
             Dim checkAccountQuery As String = "SELECT account_enabled FROM tbl_employees WHERE username = @username"
             Dim checkCmd As New MySqlCommand(checkAccountQuery, con)
             checkCmd.Parameters.AddWithValue("@username", username)
-            Dim accountEnabled As Boolean = Convert.ToBoolean(checkCmd.ExecuteScalar())
 
-            If Not accountEnabled Then
-                MessageBox.Show("Your account is disabled. Please contact an administrator for assistance.")
-                Return
+            Dim accountEnabled As Object = checkCmd.ExecuteScalar()
+            If accountEnabled IsNot Nothing AndAlso accountEnabled IsNot DBNull.Value Then
+                Dim isEnabled As Boolean = Convert.ToBoolean(accountEnabled)
+
+                If Not isEnabled Then
+                    MessageBox.Show("Your account is disabled. Please contact an administrator for assistance.")
+                    Return
+                End If
+            Else
+                ' Set accountEnabled to True when the value is Null
+                accountEnabled = True
             End If
 
             Dim updateQuery As String = "UPDATE tbl_employees SET password = @newPassword, last_password_change = CURRENT_TIMESTAMP() WHERE username = @username AND email = @email"
