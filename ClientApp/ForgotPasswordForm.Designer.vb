@@ -35,6 +35,8 @@ Partial Class ForgotPasswordForm
         Me.newPasswordTextBox = New System.Windows.Forms.TextBox()
         Me.confirmNewPasswordTextBox = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.moveBtn = New System.Windows.Forms.PictureBox()
+        CType(Me.moveBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Cancel_Button
@@ -192,6 +194,18 @@ Partial Class ForgotPasswordForm
         Me.TextBox1.TabIndex = 11
         Me.TextBox1.TabStop = False
         '
+        'moveBtn
+        '
+        Me.moveBtn.BackColor = System.Drawing.Color.Transparent
+        Me.moveBtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.moveBtn.Image = Global.ClientApp.My.Resources.Resources.icons8_move_16
+        Me.moveBtn.Location = New System.Drawing.Point(393, 12)
+        Me.moveBtn.Name = "moveBtn"
+        Me.moveBtn.Size = New System.Drawing.Size(40, 40)
+        Me.moveBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.moveBtn.TabIndex = 28
+        Me.moveBtn.TabStop = False
+        '
         'ForgotPasswordForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -200,6 +214,7 @@ Partial Class ForgotPasswordForm
         Me.CancelButton = Me.Cancel_Button
         Me.ClientSize = New System.Drawing.Size(445, 401)
         Me.ControlBox = False
+        Me.Controls.Add(Me.moveBtn)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.confirmNewPasswordTextBox)
         Me.Controls.Add(Me.newPasswordTextBox)
@@ -219,6 +234,7 @@ Partial Class ForgotPasswordForm
         Me.Name = "ForgotPasswordForm"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        CType(Me.moveBtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -236,4 +252,5 @@ Partial Class ForgotPasswordForm
     Friend WithEvents newPasswordTextBox As TextBox
     Friend WithEvents confirmNewPasswordTextBox As TextBox
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents moveBtn As PictureBox
 End Class

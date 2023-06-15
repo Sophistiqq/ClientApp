@@ -9,6 +9,7 @@ Public Class ForgotPasswordForm
     End Sub
 
     Private Sub ForgotPasswordForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FormUtils.EnableFormMovement(Me, moveBtn)
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -50,6 +51,7 @@ Public Class ForgotPasswordForm
                 MessageBox.Show("Your password has been reset successfully.")
                 Me.DialogResult = DialogResult.OK
                 Me.Close()
+
             Else
                 MessageBox.Show("Invalid username or email.")
             End If

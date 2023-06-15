@@ -3,6 +3,8 @@ Imports MySql.Data.MySqlClient
 
 Public Class Main
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FormUtils.EnableFormMovement(Me, moveBtn)
+
         Try
             LoadEmployeeData()
             DisplayStorageFiles()
