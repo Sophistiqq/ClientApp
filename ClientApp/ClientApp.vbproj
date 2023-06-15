@@ -191,5 +191,11 @@
   <ItemGroup>
     <None Include="Resources\delete.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-move-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-move-16 %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
