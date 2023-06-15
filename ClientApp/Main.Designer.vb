@@ -32,11 +32,11 @@ Partial Class Main
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.displayName = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.chatBtn = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.fileshareBtn = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.filesharePanel = New System.Windows.Forms.TableLayoutPanel()
@@ -63,12 +63,10 @@ Partial Class Main
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.closeBtn = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        Me.Panel4.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.filesharePanel.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -83,9 +81,6 @@ Partial Class Main
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -98,7 +93,6 @@ Partial Class Main
         Me.Panel1.Controls.Add(Me.PictureBox4)
         Me.Panel1.Controls.Add(Me.TextBox2)
         Me.Panel1.Controls.Add(Me.TextBox1)
-        Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Controls.Add(Me.Panel3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
@@ -116,6 +110,16 @@ Partial Class Main
         Me.displayName.Size = New System.Drawing.Size(57, 22)
         Me.displayName.TabIndex = 14
         Me.displayName.Text = "Name"
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.ClientApp.My.Resources.Resources.avatar
+        Me.PictureBox4.Location = New System.Drawing.Point(39, 40)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 13
+        Me.PictureBox4.TabStop = False
         '
         'TextBox2
         '
@@ -143,29 +147,6 @@ Partial Class Main
         Me.TextBox1.TabIndex = 11
         Me.TextBox1.TabStop = False
         '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.PictureBox2)
-        Me.Panel4.Controls.Add(Me.chatBtn)
-        Me.Panel4.Location = New System.Drawing.Point(42, 249)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Padding = New System.Windows.Forms.Padding(3)
-        Me.Panel4.Size = New System.Drawing.Size(200, 44)
-        Me.Panel4.TabIndex = 6
-        '
-        'chatBtn
-        '
-        Me.chatBtn.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.chatBtn.Dock = System.Windows.Forms.DockStyle.Right
-        Me.chatBtn.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chatBtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.chatBtn.Location = New System.Drawing.Point(48, 3)
-        Me.chatBtn.Name = "chatBtn"
-        Me.chatBtn.Size = New System.Drawing.Size(149, 38)
-        Me.chatBtn.TabIndex = 4
-        Me.chatBtn.Text = "Chat"
-        Me.chatBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(98, Byte), Integer), CType(CType(210, Byte), Integer))
@@ -176,6 +157,17 @@ Partial Class Main
         Me.Panel3.Padding = New System.Windows.Forms.Padding(3)
         Me.Panel3.Size = New System.Drawing.Size(200, 44)
         Me.Panel3.TabIndex = 5
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PictureBox1.Image = Global.ClientApp.My.Resources.Resources.file_share
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(44, 38)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 3
+        Me.PictureBox1.TabStop = False
         '
         'fileshareBtn
         '
@@ -613,38 +605,6 @@ Partial Class Main
         Me.closeBtn.TabIndex = 19
         Me.closeBtn.TabStop = False
         '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.ClientApp.My.Resources.Resources.avatar
-        Me.PictureBox4.Location = New System.Drawing.Point(39, 40)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(50, 50)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 13
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PictureBox2.Image = Global.ClientApp.My.Resources.Resources.chat_fixed
-        Me.PictureBox2.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(44, 38)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox2.TabIndex = 3
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PictureBox1.Image = Global.ClientApp.My.Resources.Resources.file_share
-        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(44, 38)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -673,8 +633,9 @@ Partial Class Main
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.filesharePanel.ResumeLayout(False)
         Me.filesharePanel.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -691,9 +652,6 @@ Partial Class Main
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.closeBtn, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -701,7 +659,6 @@ Partial Class Main
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
-    Friend WithEvents chatBtn As Label
     Friend WithEvents fileshareBtn As Label
     Friend WithEvents filesharePanel As TableLayoutPanel
     Friend WithEvents chatPanel As TableLayoutPanel
@@ -718,8 +675,6 @@ Partial Class Main
     Friend WithEvents clearBtn As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents PictureBox4 As PictureBox

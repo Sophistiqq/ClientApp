@@ -22,14 +22,19 @@ Public Class ForgotPasswordForm
             Return
         End If
 
-        If newPassword <> confirmNewPassword Then
-            MessageBox.Show("The new password and confirm new password do not match.")
-            Return
-        End If
-
         Try
             If con.State = ConnectionState.Closed Then
                 con.Open()
+            End If
+
+            Dim checkAccountQuery As String = "SELECT account_enabled FROM tbl_employees WHERE username = @username"
+            Dim checkCmd As New MySqlCommand(checkAccountQuery, con)
+            checkCmd.Parameters.AddWithValue("@username", username)
+            Dim accountEnabled As Boolean = Convert.ToBoolean(checkCmd.ExecuteScalar())
+
+            If Not accountEnabled Then
+                MessageBox.Show("Your account is disabled. Please contact an administrator for assistance.")
+                Return
             End If
 
             Dim updateQuery As String = "UPDATE tbl_employees SET password = @newPassword, last_password_change = CURRENT_TIMESTAMP() WHERE username = @username AND email = @email"
@@ -41,6 +46,7 @@ Public Class ForgotPasswordForm
             Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
 
             If rowsAffected > 0 Then
+                InsertNotification(username)
                 MessageBox.Show("Your password has been reset successfully.")
                 Me.DialogResult = DialogResult.OK
                 Me.Close()
@@ -54,6 +60,14 @@ Public Class ForgotPasswordForm
                 con.Close()
             End If
         End Try
+    End Sub
+
+    Private Sub InsertNotification(username As String)
+        Dim notificationQuery As String = "INSERT INTO tbl_notifications (employee_id, issue) SELECT id, @issue FROM tbl_employees WHERE username = @username"
+        Dim notificationCmd As New MySqlCommand(notificationQuery, con)
+        notificationCmd.Parameters.AddWithValue("@issue", "Password Reset")
+        notificationCmd.Parameters.AddWithValue("@username", username)
+        notificationCmd.ExecuteNonQuery()
     End Sub
 
 End Class

@@ -25,23 +25,25 @@ Partial Class LoginForm
         Me.Label5 = New System.Windows.Forms.Label()
         Me.loginBtn = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.label3 = New System.Windows.Forms.Label()
         Me.label1 = New System.Windows.Forms.Label()
-        Me.usernameBox = New System.Windows.Forms.TextBox()
         Me.forgotPassword = New System.Windows.Forms.Label()
-        Me.label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.passwordBox = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.passwordBox = New System.Windows.Forms.MaskedTextBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.usernameBox = New System.Windows.Forms.MaskedTextBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label5
@@ -80,17 +82,6 @@ Partial Class LoginForm
         Me.Label7.TabIndex = 9
         Me.Label7.Text = "Security System"
         '
-        'label3
-        '
-        Me.label3.AutoSize = True
-        Me.label3.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.label3.Location = New System.Drawing.Point(36, 269)
-        Me.label3.Name = "label3"
-        Me.label3.Size = New System.Drawing.Size(72, 14)
-        Me.label3.TabIndex = 4
-        Me.label3.Text = "Password"
-        '
         'label1
         '
         Me.label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -103,18 +94,6 @@ Partial Class LoginForm
         Me.label1.Size = New System.Drawing.Size(245, 32)
         Me.label1.TabIndex = 0
         Me.label1.Text = "Welcome Back,"
-        '
-        'usernameBox
-        '
-        Me.usernameBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer))
-        Me.usernameBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.usernameBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.usernameBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.usernameBox.Location = New System.Drawing.Point(39, 228)
-        Me.usernameBox.Multiline = True
-        Me.usernameBox.Name = "usernameBox"
-        Me.usernameBox.Size = New System.Drawing.Size(231, 30)
-        Me.usernameBox.TabIndex = 1
         '
         'forgotPassword
         '
@@ -129,59 +108,22 @@ Partial Class LoginForm
         Me.forgotPassword.TabIndex = 3
         Me.forgotPassword.Text = "Forgot Password?"
         '
-        'label2
-        '
-        Me.label2.AutoSize = True
-        Me.label2.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.label2.Location = New System.Drawing.Point(37, 211)
-        Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(74, 14)
-        Me.label2.TabIndex = 3
-        Me.label2.Text = "Username"
-        '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.PictureBox4)
-        Me.Panel1.Controls.Add(Me.PictureBox3)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.GroupBox1)
+        Me.Panel1.Controls.Add(Me.GroupBox6)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.loginBtn)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.label3)
-        Me.Panel1.Controls.Add(Me.passwordBox)
         Me.Panel1.Controls.Add(Me.label1)
-        Me.Panel1.Controls.Add(Me.usernameBox)
         Me.Panel1.Controls.Add(Me.forgotPassword)
-        Me.Panel1.Controls.Add(Me.label2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(363, 450)
         Me.Panel1.TabIndex = 17
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer))
-        Me.PictureBox4.Image = Global.ClientApp.My.Resources.Resources.password
-        Me.PictureBox4.Location = New System.Drawing.Point(247, 286)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(30, 30)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox4.TabIndex = 12
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer))
-        Me.PictureBox3.Image = Global.ClientApp.My.Resources.Resources.user
-        Me.PictureBox3.Location = New System.Drawing.Point(247, 228)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox3.TabIndex = 11
-        Me.PictureBox3.TabStop = False
         '
         'TextBox1
         '
@@ -195,19 +137,6 @@ Partial Class LoginForm
         Me.TextBox1.Size = New System.Drawing.Size(5, 370)
         Me.TextBox1.TabIndex = 10
         Me.TextBox1.TabStop = False
-        '
-        'passwordBox
-        '
-        Me.passwordBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer))
-        Me.passwordBox.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.passwordBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.passwordBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.passwordBox.Location = New System.Drawing.Point(38, 286)
-        Me.passwordBox.Multiline = True
-        Me.passwordBox.Name = "passwordBox"
-        Me.passwordBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.passwordBox.Size = New System.Drawing.Size(230, 30)
-        Me.passwordBox.TabIndex = 2
         '
         'PictureBox1
         '
@@ -231,6 +160,88 @@ Partial Class LoginForm
         Me.PictureBox2.TabIndex = 18
         Me.PictureBox2.TabStop = False
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.passwordBox)
+        Me.GroupBox1.Controls.Add(Me.PictureBox5)
+        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
+        Me.GroupBox1.Location = New System.Drawing.Point(36, 264)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(10)
+        Me.GroupBox1.Size = New System.Drawing.Size(241, 63)
+        Me.GroupBox1.TabIndex = 12
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Password"
+        '
+        'passwordBox
+        '
+        Me.passwordBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.passwordBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.passwordBox.Dock = System.Windows.Forms.DockStyle.Left
+        Me.passwordBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.passwordBox.ForeColor = System.Drawing.Color.White
+        Me.passwordBox.Location = New System.Drawing.Point(10, 25)
+        Me.passwordBox.Name = "passwordBox"
+        Me.passwordBox.Size = New System.Drawing.Size(187, 22)
+        Me.passwordBox.TabIndex = 1
+        Me.passwordBox.UseSystemPasswordChar = True
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox5.Image = Global.ClientApp.My.Resources.Resources.password
+        Me.PictureBox5.Location = New System.Drawing.Point(201, 22)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox5.TabIndex = 11
+        Me.PictureBox5.TabStop = False
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.GroupBox6.Controls.Add(Me.usernameBox)
+        Me.GroupBox6.Controls.Add(Me.PictureBox3)
+        Me.GroupBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox6.ForeColor = System.Drawing.Color.White
+        Me.GroupBox6.Location = New System.Drawing.Point(36, 195)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(10)
+        Me.GroupBox6.Size = New System.Drawing.Size(241, 63)
+        Me.GroupBox6.TabIndex = 11
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Username"
+        '
+        'usernameBox
+        '
+        Me.usernameBox.BackColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(43, Byte), Integer))
+        Me.usernameBox.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.usernameBox.Dock = System.Windows.Forms.DockStyle.Left
+        Me.usernameBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.usernameBox.ForeColor = System.Drawing.Color.White
+        Me.usernameBox.Location = New System.Drawing.Point(10, 25)
+        Me.usernameBox.Name = "usernameBox"
+        Me.usernameBox.Size = New System.Drawing.Size(187, 22)
+        Me.usernameBox.TabIndex = 1
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.Image = Global.ClientApp.My.Resources.Resources.user
+        Me.PictureBox3.Location = New System.Drawing.Point(201, 22)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox3.TabIndex = 11
+        Me.PictureBox3.TabStop = False
+        '
         'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -245,10 +256,14 @@ Partial Class LoginForm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -257,15 +272,15 @@ Partial Class LoginForm
     Private WithEvents Label5 As Label
     Private WithEvents loginBtn As Button
     Private WithEvents Label7 As Label
-    Private WithEvents label3 As Label
     Private WithEvents label1 As Label
-    Private WithEvents usernameBox As TextBox
     Private WithEvents forgotPassword As Label
-    Private WithEvents label2 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents TextBox1 As TextBox
-    Private WithEvents passwordBox As TextBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents passwordBox As MaskedTextBox
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents usernameBox As MaskedTextBox
+    Friend WithEvents PictureBox3 As PictureBox
 End Class

@@ -220,7 +220,7 @@ Public Class Main
         End Using
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click, PictureBox8.Click
         DisplayStorageFiles()
         DisplayReceivedFiles()
         receivedFiles.ClearSelection()
