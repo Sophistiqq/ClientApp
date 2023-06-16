@@ -298,6 +298,7 @@ Public Class Main
         End If
     End Sub
 
+
     Private Sub deleteFileBtn_Click(sender As Object, e As EventArgs) Handles deleteFileBtn.Click
         If receivedFiles.SelectedRows.Count > 0 Then
             ' Get the selected row
