@@ -160,7 +160,11 @@ Public Class LoginForm
             Me.Close()
         End Try
     End Sub
-
+    Private Sub Minimize_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        If Me.WindowState = FormWindowState.Normal Then
+            Me.WindowState = FormWindowState.Minimized
+        End If
+    End Sub
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Me.Close()
     End Sub

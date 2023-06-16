@@ -292,7 +292,7 @@ Public Class Main
         End If
     End Sub
 
-    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
+    Private Sub Minimize_Click(sender As Object, e As EventArgs) Handles PictureBox6.Click
         If Me.WindowState = FormWindowState.Normal Then
             Me.WindowState = FormWindowState.Minimized
         End If

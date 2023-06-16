@@ -30,22 +30,24 @@ Partial Class LoginForm
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.passwordBox = New System.Windows.Forms.MaskedTextBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.usernameBox = New System.Windows.Forms.MaskedTextBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.moveBtn = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
-        CType(Me.moveBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.moveBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label5
@@ -106,9 +108,9 @@ Partial Class LoginForm
         Me.forgotPassword.Location = New System.Drawing.Point(34, 389)
         Me.forgotPassword.Name = "forgotPassword"
         Me.forgotPassword.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.forgotPassword.Size = New System.Drawing.Size(121, 14)
+        Me.forgotPassword.Size = New System.Drawing.Size(117, 14)
         Me.forgotPassword.TabIndex = 3
-        Me.forgotPassword.Text = "Forgot Password?"
+        Me.forgotPassword.Text = "Account Recovery"
         '
         'Panel1
         '
@@ -156,6 +158,18 @@ Partial Class LoginForm
         Me.passwordBox.TabIndex = 1
         Me.passwordBox.UseSystemPasswordChar = True
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox5.Image = Global.ClientApp.My.Resources.Resources.password
+        Me.PictureBox5.Location = New System.Drawing.Point(201, 22)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox5.TabIndex = 11
+        Me.PictureBox5.TabStop = False
+        '
         'GroupBox6
         '
         Me.GroupBox6.BackColor = System.Drawing.Color.Transparent
@@ -185,6 +199,18 @@ Partial Class LoginForm
         Me.usernameBox.Size = New System.Drawing.Size(187, 22)
         Me.usernameBox.TabIndex = 1
         '
+        'PictureBox3
+        '
+        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.Image = Global.ClientApp.My.Resources.Resources.user
+        Me.PictureBox3.Location = New System.Drawing.Point(201, 22)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox3.TabIndex = 11
+        Me.PictureBox3.TabStop = False
+        '
         'TextBox1
         '
         Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(69, Byte), Integer))
@@ -203,40 +229,16 @@ Partial Class LoginForm
         Me.moveBtn.BackColor = System.Drawing.Color.White
         Me.moveBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.moveBtn.Image = Global.ClientApp.My.Resources.Resources.icons8_move_16__1_
-        Me.moveBtn.Location = New System.Drawing.Point(714, 0)
+        Me.moveBtn.Location = New System.Drawing.Point(662, 0)
         Me.moveBtn.Name = "moveBtn"
         Me.moveBtn.Size = New System.Drawing.Size(40, 40)
         Me.moveBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.moveBtn.TabIndex = 19
         Me.moveBtn.TabStop = False
         '
-        'PictureBox5
-        '
-        Me.PictureBox5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox5.Image = Global.ClientApp.My.Resources.Resources.password
-        Me.PictureBox5.Location = New System.Drawing.Point(201, 22)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(30, 30)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox5.TabIndex = 11
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Image = Global.ClientApp.My.Resources.Resources.user
-        Me.PictureBox3.Location = New System.Drawing.Point(201, 22)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(30, 30)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox3.TabIndex = 11
-        Me.PictureBox3.TabStop = False
-        '
         'PictureBox2
         '
-        Me.PictureBox2.BackColor = System.Drawing.Color.White
+        Me.PictureBox2.BackColor = System.Drawing.Color.Firebrick
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox2.Image = Global.ClientApp.My.Resources.Resources.close
         Me.PictureBox2.Location = New System.Drawing.Point(760, 0)
@@ -256,12 +258,25 @@ Partial Class LoginForm
         Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
         '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.Blue
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox4.Image = Global.ClientApp.My.Resources.Resources.minimized_fixed
+        Me.PictureBox4.Location = New System.Drawing.Point(714, 0)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox4.TabIndex = 20
+        Me.PictureBox4.TabStop = False
+        '
         'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.ControlBox = False
+        Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.moveBtn)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox2)
@@ -273,13 +288,14 @@ Partial Class LoginForm
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
-        CType(Me.moveBtn, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.moveBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -300,4 +316,5 @@ Partial Class LoginForm
     Friend WithEvents usernameBox As MaskedTextBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents moveBtn As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
 End Class

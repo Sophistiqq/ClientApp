@@ -11,7 +11,9 @@ Public Class ForgotPasswordForm
     Private Sub ForgotPasswordForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FormUtils.EnableFormMovement(Me, moveBtn)
     End Sub
+    Private Sub Minimize_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
 
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim username As String = usernameTextBox.Text
         Dim email As String = emailTextBox.Text
@@ -78,5 +80,4 @@ Public Class ForgotPasswordForm
         notificationCmd.Parameters.AddWithValue("@username", username)
         notificationCmd.ExecuteNonQuery()
     End Sub
-
 End Class

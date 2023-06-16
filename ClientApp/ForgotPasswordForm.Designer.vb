@@ -36,8 +36,10 @@ Partial Class ForgotPasswordForm
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.moveBtn = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         CType(Me.moveBtn, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -45,7 +47,7 @@ Partial Class ForgotPasswordForm
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(66, 103)
+        Me.Label1.Location = New System.Drawing.Point(66, 142)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(91, 20)
         Me.Label1.TabIndex = 1
@@ -56,7 +58,7 @@ Partial Class ForgotPasswordForm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(69, 153)
+        Me.Label2.Location = New System.Drawing.Point(69, 192)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 20)
         Me.Label2.TabIndex = 2
@@ -68,7 +70,7 @@ Partial Class ForgotPasswordForm
         Me.usernameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.usernameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.usernameTextBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.usernameTextBox.Location = New System.Drawing.Point(229, 99)
+        Me.usernameTextBox.Location = New System.Drawing.Point(229, 138)
         Me.usernameTextBox.Multiline = True
         Me.usernameTextBox.Name = "usernameTextBox"
         Me.usernameTextBox.Size = New System.Drawing.Size(223, 29)
@@ -80,7 +82,7 @@ Partial Class ForgotPasswordForm
         Me.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.emailTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.emailTextBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.emailTextBox.Location = New System.Drawing.Point(229, 148)
+        Me.emailTextBox.Location = New System.Drawing.Point(229, 187)
         Me.emailTextBox.Multiline = True
         Me.emailTextBox.Name = "emailTextBox"
         Me.emailTextBox.Size = New System.Drawing.Size(223, 29)
@@ -91,7 +93,7 @@ Partial Class ForgotPasswordForm
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(112, 39)
+        Me.Label3.Location = New System.Drawing.Point(112, 78)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(134, 31)
         Me.Label3.TabIndex = 5
@@ -102,7 +104,7 @@ Partial Class ForgotPasswordForm
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(98, Byte), Integer), CType(CType(210, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(176, 298)
+        Me.Button1.Location = New System.Drawing.Point(176, 337)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(132, 35)
         Me.Button1.TabIndex = 5
@@ -114,7 +116,7 @@ Partial Class ForgotPasswordForm
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(69, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(238, 39)
+        Me.Label4.Location = New System.Drawing.Point(238, 78)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(130, 31)
         Me.Label4.TabIndex = 7
@@ -125,7 +127,7 @@ Partial Class ForgotPasswordForm
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(67, 205)
+        Me.Label5.Location = New System.Drawing.Point(67, 244)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(125, 20)
         Me.Label5.TabIndex = 8
@@ -136,7 +138,7 @@ Partial Class ForgotPasswordForm
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(67, 248)
+        Me.Label6.Location = New System.Drawing.Point(67, 287)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(153, 20)
         Me.Label6.TabIndex = 9
@@ -148,7 +150,7 @@ Partial Class ForgotPasswordForm
         Me.newPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.newPasswordTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.newPasswordTextBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.newPasswordTextBox.Location = New System.Drawing.Point(228, 200)
+        Me.newPasswordTextBox.Location = New System.Drawing.Point(228, 239)
         Me.newPasswordTextBox.Multiline = True
         Me.newPasswordTextBox.Name = "newPasswordTextBox"
         Me.newPasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -161,7 +163,7 @@ Partial Class ForgotPasswordForm
         Me.confirmNewPasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.confirmNewPasswordTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.confirmNewPasswordTextBox.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(251, Byte), Integer), CType(CType(244, Byte), Integer))
-        Me.confirmNewPasswordTextBox.Location = New System.Drawing.Point(228, 244)
+        Me.confirmNewPasswordTextBox.Location = New System.Drawing.Point(228, 283)
         Me.confirmNewPasswordTextBox.Multiline = True
         Me.confirmNewPasswordTextBox.Name = "confirmNewPasswordTextBox"
         Me.confirmNewPasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -173,7 +175,7 @@ Partial Class ForgotPasswordForm
         Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(69, Byte), Integer))
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(27, 40)
+        Me.TextBox1.Location = New System.Drawing.Point(27, 79)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
@@ -186,7 +188,7 @@ Partial Class ForgotPasswordForm
         Me.moveBtn.BackColor = System.Drawing.Color.Transparent
         Me.moveBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.moveBtn.Image = Global.ClientApp.My.Resources.Resources.icons8_move_16
-        Me.moveBtn.Location = New System.Drawing.Point(390, 12)
+        Me.moveBtn.Location = New System.Drawing.Point(350, 12)
         Me.moveBtn.Name = "moveBtn"
         Me.moveBtn.Size = New System.Drawing.Size(40, 40)
         Me.moveBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -205,13 +207,26 @@ Partial Class ForgotPasswordForm
         Me.PictureBox1.TabIndex = 29
         Me.PictureBox1.TabStop = False
         '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox4.Image = Global.ClientApp.My.Resources.Resources.minimized_fixed
+        Me.PictureBox4.Location = New System.Drawing.Point(394, 12)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox4.TabIndex = 30
+        Me.PictureBox4.TabStop = False
+        '
         'ForgotPasswordForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(6, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(489, 383)
+        Me.ClientSize = New System.Drawing.Size(489, 443)
         Me.ControlBox = False
+        Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.moveBtn)
         Me.Controls.Add(Me.TextBox1)
@@ -234,6 +249,7 @@ Partial Class ForgotPasswordForm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         CType(Me.moveBtn, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -252,4 +268,5 @@ Partial Class ForgotPasswordForm
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents moveBtn As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
 End Class
